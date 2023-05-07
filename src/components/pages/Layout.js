@@ -1,12 +1,12 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import AppBar from '../Navigation/AppBar';
+import {NavigationBar} from '../Navigation/AppBar';
 import { Container} from '../pages/Layout.styled';
 
 const Layout = () => {
   return (
     <Container>
-      <AppBar />
+      <NavigationBar />
 
       <main>
         <Suspense fallback={<div>Loading...</div>}>

@@ -8,6 +8,7 @@ const initialState = {
   },
   token: null,
   isLoggedIn: false,
+  isRefreshing: false,
 };
 
 const authSlice = createSlice({
@@ -30,7 +31,19 @@ const authSlice = createSlice({
         state.token = null;
         state.isLoggedIn = false;
       },)
+      .addCase(authOperations.getCurrentUser.pending,(state,action)=>{
+        state.user = action.payload;
+        state.isRefreshing = true;
+      })
+      .addCase(authOperations.getCurrentUser.fulfilled,(state,action)=>{
+        state.user = action.payload;
+        state.isLoggedIn = true;
+        state.isRefreshing = false;
+      })
+      .addCase(authOperations.getCurrentUser.rejected,(state)=>{
+        state.isRefreshing = false;
+      })
   },
 });
 
-export default authSlice.reducer;
+export const authReducer = authSlice.reducer;
