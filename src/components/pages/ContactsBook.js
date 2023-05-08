@@ -1,28 +1,28 @@
-
-// import { useDispatch, useSelector } from 'react-redux';
-// import selectIsLoading from '../../redux/contacts/selectors';
 import ContactForm from '../ContactForm/form';
 import ContactList from '../ContactList/ContactList';
 import Filter from '../Filter/Filter';
+import { Container, Box, Typography } from '@mui/material';
 
 const ContactsBook = () => {
-  // const dispatch = useDispatch();
-  // const isLoadingContacts = useSelector(selectIsLoading);
-  // const 
 
+  return (
+    <Container>
+      <Box>
+        <Typography variant="h2" component="h1" color="primary" align="center">
+          Phonebook
+        </Typography>
+        <ContactForm />
+      </Box>
 
-
-
-  return(
-    <div>
-      <h1>Phonebook</h1>
-      <ContactForm />
-
-      <h2>Contacts</h2>
-      <Filter />
-      <ContactList />
-    </div>
-  )
+      <Box>
+        <Typography variant="h2" component="h1" color="primary" align="center">
+          Contacts
+        </Typography>
+        <Filter />
+        <ContactList />
+      </Box>
+    </Container>
+  );
 };
 
 export default ContactsBook;

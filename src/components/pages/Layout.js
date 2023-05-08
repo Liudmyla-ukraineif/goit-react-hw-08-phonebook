@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import {NavigationBar} from '../Navigation/AppBar';
-import { Container} from '../pages/Layout.styled';
+import { Container } from '@mui/material';
 
 const Layout = () => {
   return (

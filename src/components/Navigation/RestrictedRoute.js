@@ -4,7 +4,7 @@ import authSelectors from 'redux/auth/authSelectors';
 
 export const RestrictedRouter = ({
   component: Component,
-  redirectTo = '/',
+  redirectTo = '/'
 }) => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   
